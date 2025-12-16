@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Emilío Marmitex e Viandas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Dom Emilío Marmitex e Viandas</h1>
+    </header>
+
+    <!-- Seção Marmitas -->
+    <section id="sabores">
+        <h2>Sabores Disponíveis</h2>
+        <div class="marmita">
+            <span class="nome">Marmita 1</span>
+            <span class="valor">R$ 20,00</span>
+            <button class="add">+</button>
+            <span class="quantidade">0</span>
+        </div>
+        <div class="marmita">
+            <span class="nome">Marmita 2</span>
+            <span class="valor">R$ 25,00</span>
+            <button class="add">+</button>
+            <span class="quantidade">0</span>
+        </div>
+        <div class="marmita">
+            <span class="nome">Marmita 3</span>
+            <span class="valor">R$ 30,00</span>
+            <button class="add">+</button>
+            <span class="quantidade">0</span>
+        </div>
+    </section>
+
+    <!-- Seção Pedido -->
+    <section id="pedido">
+        <h2>Informações do Pedido</h2>
+
+        <label for="pagamento">Forma de Pagamento:</label>
+        <select id="pagamento">
+            <option value="pix">Pix</option>
+            <option value="dinheiro">Dinheiro</option>
+            <option value="cartao">Cartão</option>
+        </select>
+
+        <label for="observacao">Observações:</label>
+        <textarea id="observacao" rows="3" placeholder="Algo especial para seu pedido?"></textarea>
+
+        <label>Tipo de Pedido:</label>
+        <div class="tipo-pedido">
+            <input type="radio" id="tele" name="tipo" value="Tele (Entrega)">
+            <label for="tele">Tele (Entrega)</label>
+
+            <input type="radio" id="retirada" name="tipo" value="Retirada">
+            <label for="retirada">Retirada</label>
+        </div>
+
+        <button id="enviar">Enviar Pedido</button>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>© 2025 Dom Emilío Marmitex e Viandas</p>
+    </footer>
+
+    <!-- Script funcional -->
+    <script>
+        const buttons = document.querySelectorAll('.add');
+
+        buttons.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                const quantidadeElem = btn.nextElementSibling;
+                let quantidade = parseInt(quantidadeElem.textContent);
+                quantidade += 1;
+                quantidadeElem.textContent = quantidade;
+            });
+        });
+
+        const enviar = document.getElementById('enviar');
+
+        enviar.addEventListener('click', function() {
+            let pedido = '';
+
+            const marmitas = document.querySelectorAll('.marmita');
+            marmitas.forEach(function(m) {
+                const nome = m.querySelector('.nome').textContent;
+                const qtd = parseInt(m.querySelector('.quantidade').textContent);
+                if(qtd > 0) {
+                    pedido += nome + ': ' + qtd + '\n';
+                }
+            });
+
+            const pagamento = document.getElementById('pagamento').value;
+            const observacao = document.getElementById('observacao').value;
+            const tipoRadio = document.querySelector('input[name="tipo"]:checked');
+            let tipo = '';
+            if(tipoRadio) tipo = tipoRadio.value;
+
+            if(pedido === '') {
+                alert('Selecione pelo menos uma marmita!');
+                return;
+            }
+
+            const numero = 'SEUNUMERO'; // substitua pelo número real do WhatsApp
+            const mensagem = 'Pedido:%0A' + encodeURIComponent(pedido) +
+                              '%0APagamento: ' + encodeURIComponent(pagamento) +
+                              '%0AObservações: ' + encodeURIComponent(observacao) +
+                              '%0ATipo: ' + encodeURIComponent(tipo);
+
+            window.open('https://wa.me/' + numero + '?text=' + mensagem, '_blank');
+        });
+    </script>
+</body>
+</html>
