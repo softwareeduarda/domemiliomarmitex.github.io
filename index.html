@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dom Emilío Marmitex e Viandas</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Dom Emílio Marmitex</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-    <h1>Dom Emilío Marmitex e Viandas</h1>
+    <h1>Dom Emílio Marmitex</h1>
+    <p>Faça seu pedido 🍽️</p>
 </header>
 
 <section>
@@ -81,76 +80,9 @@
 
 </section>
 
-<section id="pedido">
-    <h2>Informações do Pedido</h2>
-
-    <label for="pagamento">Forma de Pagamento:</label>
-    <select id="pagamento">
-        <option value="pix">Pix</option>
-        <option value="dinheiro">Dinheiro</option>
-        <option value="cartao">Cartão</option>
-    </select>
-
-    <label for="observacao">Observações:</label>
-    <textarea id="observacao" rows="3" placeholder="Algo especial para seu pedido?"></textarea>
-
-    <label>Tipo de Pedido:</label>
-    <div class="tipo-pedido">
-        <input type="radio" id="tele" name="tipo" value="Tele (Entrega)">
-        <label for="tele">Tele (Entrega)</label>
-
-        <input type="radio" id="retirada" name="tipo" value="Retirada">
-        <label for="retirada">Retirada</label>
-    </div>
-
-    <button id="enviar">Enviar Pedido</button>
-</section>
-
 <footer>
-    <p>© 2025 Dom Emilío Marmitex e Viandas</p>
+    <p>Pedidos pelo WhatsApp</p>
 </footer>
-
-<script>
-// Controles de quantidade
-document.querySelectorAll('.marmita').forEach(m => {
-    const quantidadeSpan = m.querySelector('.quantidade');
-    const addBtn = m.querySelector('.add');
-    const minusBtn = m.querySelector('.minus');
-
-    addBtn.addEventListener('click', () => {
-        quantidadeSpan.textContent = parseInt(quantidadeSpan.textContent) + 1;
-    });
-
-    minusBtn.addEventListener('click', () => {
-        let val = parseInt(quantidadeSpan.textContent);
-        if(val > 0) quantidadeSpan.textContent = val - 1;
-    });
-});
-
-// Enviar pedido via WhatsApp
-document.getElementById('enviar').addEventListener('click', () => {
-    let pedido = '';
-    document.querySelectorAll('.marmita').forEach(m => {
-        const nome = m.querySelector('.nome').textContent;
-        const qtd = parseInt(m.querySelector('.quantidade').textContent);
-        if(qtd > 0) pedido += `${nome}: ${qtd}\n`;
-    });
-
-    if(!pedido) { alert('Selecione pelo menos uma marmita!'); return; }
-
-    const pagamento = document.getElementById('pagamento').value;
-    const observacao = document.getElementById('observacao').value;
-    const tipoRadio = document.querySelector('input[name="tipo"]:checked');
-    const tipo = tipoRadio ? tipoRadio.value : '';
-
-    const numero = 'SEUNUMERO'; // substitua pelo WhatsApp real no formato internacional
-    const mensagem = encodeURIComponent(
-        `Pedido:\n${pedido}Pagamento: ${pagamento}\nObservações: ${observacao}\nTipo: ${tipo}`
-    );
-
-    window.open(`https://wa.me/${numero}?text=${mensagem}`, '_blank');
-});
-</script>
 
 </body>
 </html>
