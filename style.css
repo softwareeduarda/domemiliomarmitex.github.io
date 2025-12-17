@@ -1,0 +1,114 @@
+/* Fonte e corpo */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff8f0;
+    color: #333;
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #a34a12; /* marrom */
+    color: white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+/* Seções Marmitas e Pedido */
+section {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 30px auto;
+    background-color: #fdf0fc;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+section h2 {
+    color: #a34a12;
+    margin-bottom: 20px;
+}
+
+/* Marmitas */
+.marmita {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #ffe6d6;
+    border-radius: 10px;
+}
+
+.marmita .nome {
+    font-weight: bold;
+}
+
+.marmita .valor {
+    margin: 0 10px;
+}
+
+.marmita button {
+    background-color: #a34a12; /* marrom */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.marmita button:hover {
+    background-color: #873d0f; /* marrom escuro ao passar o mouse */
+}
+
+/* Pedido */
+label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: bold;
+}
+
+select, textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.tipo-pedido input {
+    margin-right: 5px;
+}
+
+button#enviar {
+    background-color: #a34a12; /* marrom */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button#enviar:hover {
+    background-color: #873d0f; /* marrom escuro */
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #a34a12; /* marrom */
+    color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    margin-top: 40px;
+}
