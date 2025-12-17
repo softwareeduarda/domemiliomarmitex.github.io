@@ -1,166 +1,105 @@
-/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: Arial, sans-serif;
 }
 
-/* FUNDO GERAL */
 body {
-    background: linear-gradient(135deg, #fff1e6, #ffe0cc); /* fundo claro */
-    min-height: 100vh;
-    color: #2b1b12; /* texto marrom */
+    background-color: #f5f2ef;
+    color: #3b2416;
 }
 
-/* CABEÇALHO */
 header {
-    background: #a34a12; /* marrom */
-    padding: 60px 20px;
+    background-color: #6b3a1e;
+    color: #ffffff;
     text-align: center;
-    color: #fff;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    padding: 50px 20px;
 }
 
 header h1 {
-    font-size: 2.6rem;
-    letter-spacing: 1px;
+    font-size: 2.4rem;
 }
 
-/* SEÇÕES */
 section {
     max-width: 900px;
-    margin: 40px auto;
-    padding: 35px;
-    background: rgba(255,255,255,0.85); /* fundo branco/transparente */
-    backdrop-filter: blur(6px);
-    border-radius: 22px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-}
-
-section h2 {
-    color: #a34a12; /* título marrom */
-    margin-bottom: 25px;
-    font-size: 1.8rem;
-    border-left: 6px solid #a34a12; /* borda marrom */
-    padding-left: 12px;
-}
-
-/* MARMITAS */
-.marmita {
-    display: flex;
-    align-items: center;
-    gap: 15px; /* espaço entre imagem e nome */
-    padding: 18px;
-    margin-bottom: 15px;
-    border-radius: 18px;
-    background: linear-gradient(135deg, #ffe7d6, #fff3ea);
-    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-/* Imagem pequena do lado do nome */
-.foto-marmita {
-    width: 50px; /* tamanho da foto ajustado */
-    height: 50px;
-    object-fit: cover;
-    border-radius: 10px; /* borda arredondada */
-    border: 2px solid #7c3308; /* borda fina marrom */
-}
-
-/* Efeito hover para as marmitas */
-.marmita:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
-}
-
-.marmita .nome {
-    font-weight: 700;
-    font-size: 1.1rem;
-}
-
-.marmita .valor {
-    font-weight: bold;
-    color: #7c3308; /* marrom para preço */
-}
-
-/* Ajuste no botão */
-.marmita button {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: none;
-    background: #a34a12; /* marrom */
-    color: #fff;
-    font-size: 20px;
-    cursor: pointer;
-    box-shadow: 0 5px 12px rgba(0,0,0,0.2);
-    transition: transform 0.15s ease;
-}
-
-.marmita button:hover {
-    transform: scale(1.1);
-}
-
-.quantidade {
-    font-weight: bold;
-    font-size: 1.1rem;
-}
-
-/* FORMULÁRIO */
-label {
-    display: block;
-    margin-top: 20px;
-    margin-bottom: 6px;
-    font-weight: bold;
-}
-
-select, textarea {
-    width: 100%;
-    padding: 14px;
-    border-radius: 14px;
-    border: 1px solid #d6b39c;
-    background: #fff;
-    font-size: 1rem;
-}
-
-/* TIPO PEDIDO */
-.tipo-pedido {
-    margin-top: 10px;
-}
-
-.tipo-pedido label {
-    margin-right: 20px;
-    font-weight: normal;
-}
-
-/* BOTÃO ENVIAR */
-#enviar {
-    margin-top: 30px;
-    width: 100%;
-    padding: 16px;
-    border-radius: 18px;
-    border: none;
-    background: #a34a12; /* marrom */
-    color: #fff;
-    font-size: 1.2rem;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-    transition: transform 0.2s ease;
-}
-
-#enviar:hover {
-    transform: scale(1.02);
-}
-
-/* RODAPÉ */
-footer {
-    text-align: center;
+    margin: 30px auto;
     padding: 30px;
-    background: #a34a12; /* marrom */
-    color: #fff;
-    margin-top: 60px;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+h2 {
+    color: #6b3a1e;
+    margin-bottom: 20px;
+}
+
+.marmita {
+    display: grid;
+    grid-template-columns: 60px 1fr auto auto auto auto;
+    gap: 10px;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 12px;
+    background-color: #faf7f5;
+    border-radius: 12px;
+}
+
+.foto {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.valor {
+    font-weight: bold;
+}
+
+button {
+    background-color: #6b3a1e;
+    color: white;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.qtd {
+    font-weight: bold;
+}
+
+textarea,
+input[type="time"] {
+    width: 100%;
+    margin-top: 8px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.radio {
+    margin: 10px 0;
+}
+
+#enviar {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #6b3a1e;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #6b3a1e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
 }
