@@ -1,3 +1,7 @@
+body {
+    background: hotpink !important;
+}
+
 /* RESET */
 * {
     margin: 0;
