@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dom Emilío Marmitex e Viandas</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/domemiliomarmitex.github.io/style.css">
+    <meta charset="UTF-8">
+    <title>Dom Emilío Marmitex e Viandas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonte -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 
@@ -13,104 +17,87 @@
     <h1>Dom Emilío Marmitex e Viandas</h1>
 </header>
 
-<section id="sabores">
-    <h2>Sabores Disponíveis</h2>
+<section>
+    <h2>🍽️ Sabores Disponíveis</h2>
 
+    <!-- Marmita -->
     <div class="marmita">
-        <span class="nome">Almondega</span>
-        <span class="valor">R$ 13,00</span>
-        <div class="quantidade-controls">
-            <button class="minus">-</button>
-            <span class="quantidade">0</span>
-            <button class="add">+</button>
-        </div>
-    </div>
-
-    <div class="marmita">
-        <span class="nome">Filé de Frango</span>
-        <span class="valor">R$ 15,00</span>
-        <div class="quantidade-controls">
-            <button class="minus">-</button>
-            <span class="quantidade">0</span>
-            <button class="add">+</button>
-        </div>
-    </div>
-
-    <div class="marmita">
-        <span class="nome">Frango ao Molho</span>
-        <span class="valor">R$ 15,00</span>
-        <div class="quantidade-controls">
-            <button class="minus">-</button>
-            <span class="quantidade">0</span>
-            <button class="add">+</button>
-        </div>
-    </div>
-
-    <div class="marmita">
-        <span class="nome">Strogonoff</span>
-        <span class="valor">R$ 15,00</span>
-        <div class="quantidade-controls">
-            <button class="minus">-</button>
-            <span class="quantidade">0</span>
-            <button class="add">+</button>
-        </div>
-    </div>
-
-    <div class="marmita">
-        <span class="nome">Carne de Panela</span>
-        <span class="valor">R$ 15,00</span>
-        <div class="quantidade-controls">
-            <button class="minus">-</button>
-            <span class="quantidade">0</span>
-            <button class="add">+</button>
-        </div>
-    </div>
-
-    <div class="marmita">
-        <span class="nome">Bife Acebolado</span>
-        <span class="valor">R$ 18,00</span>
-        <div class="quantidade-controls">
-            <button class="minus">-</button>
-            <span class="quantidade">0</span>
-            <button class="add">+</button>
-        </div>
-    </div>
-
-    <div class="marmita">
+        <img src="a-milanesa.jpg" alt="Bife à Milanesa" class="foto-marmita">
         <span class="nome">Bife à Milanesa</span>
         <span class="valor">R$ 18,00</span>
-        <div class="quantidade-controls">
-            <button class="minus">-</button>
-            <span class="quantidade">0</span>
-            <button class="add">+</button>
-        </div>
+        <button class="add">+</button>
+        <span class="quantidade">0</span>
     </div>
 
+    <div class="marmita">
+        <img src="bife-acebolado.jpg" alt="Bife Acebolado" class="foto-marmita">
+        <span class="nome">Bife Acebolado</span>
+        <span class="valor">R$ 18,00</span>
+        <button class="add">+</button>
+        <span class="quantidade">0</span>
+    </div>
+
+    <div class="marmita">
+        <img src="almondega.jpg" alt="Almôndega" class="foto-marmita">
+        <span class="nome">Almôndega</span>
+        <span class="valor">R$ 13,00</span>
+        <button class="add">+</button>
+        <span class="quantidade">0</span>
+    </div>
+
+    <div class="marmita">
+        <img src="file-frango.jpg" alt="Filé de Frango" class="foto-marmita">
+        <span class="nome">Filé de Frango</span>
+        <span class="valor">R$ 15,00</span>
+        <button class="add">+</button>
+        <span class="quantidade">0</span>
+    </div>
+
+    <div class="marmita">
+        <img src="frango-molho.jpg" alt="Frango ao Molho" class="foto-marmita">
+        <span class="nome">Frango ao Molho</span>
+        <span class="valor">R$ 15,00</span>
+        <button class="add">+</button>
+        <span class="quantidade">0</span>
+    </div>
+
+    <div class="marmita">
+        <img src="strogonoff.jpg" alt="Strogonoff" class="foto-marmita">
+        <span class="nome">Strogonoff</span>
+        <span class="valor">R$ 15,00</span>
+        <button class="add">+</button>
+        <span class="quantidade">0</span>
+    </div>
+
+    <div class="marmita">
+        <img src="carne-panela.jpg" alt="Carne de Panela" class="foto-marmita">
+        <span class="nome">Carne de Panela</span>
+        <span class="valor">R$ 15,00</span>
+        <button class="add">+</button>
+        <span class="quantidade">0</span>
+    </div>
 </section>
 
-<section id="pedido">
-    <h2>Informações do Pedido</h2>
+<section>
+    <h2>📝 Informações do Pedido</h2>
 
-    <label for="pagamento">Forma de Pagamento:</label>
+    <label>Forma de pagamento</label>
     <select id="pagamento">
-        <option value="pix">Pix</option>
-        <option value="dinheiro">Dinheiro</option>
-        <option value="cartao">Cartão</option>
+        <option>Pix</option>
+        <option>Dinheiro</option>
+        <option>Cartão</option>
     </select>
 
-    <label for="observacao">Observações:</label>
-    <textarea id="observacao" rows="3" placeholder="Algo especial para seu pedido?"></textarea>
+    <label>Observações</label>
+    <textarea id="obs" rows="3"></textarea>
 
-    <label>Tipo de Pedido:</label>
+    <label>Tipo de pedido</label>
     <div class="tipo-pedido">
-        <input type="radio" id="tele" name="tipo" value="Tele (Entrega)">
-        <label for="tele">Tele (Entrega)</label>
-
-        <input type="radio" id="retirada" name="tipo" value="Retirada">
-        <label for="retirada">Retirada</label>
+        <label><input type="radio" name="tipo" value="Tele"> Tele</label>
+        <label><input type="radio" name="tipo" value="Retirada"> Retirada</label>
     </div>
 
-    <button id="enviar">Enviar Pedido</button>
+    <button id="enviar">Enviar Pedido pelo WhatsApp</button>
 </section>
 
 <footer>
@@ -118,45 +105,34 @@
 </footer>
 
 <script>
-// Controles de quantidade
-document.querySelectorAll('.marmita').forEach(m => {
-    const quantidadeSpan = m.querySelector('.quantidade');
-    const addBtn = m.querySelector('.add');
-    const minusBtn = m.querySelector('.minus');
-
-    addBtn.addEventListener('click', () => {
-        quantidadeSpan.textContent = parseInt(quantidadeSpan.textContent) + 1;
+    document.querySelectorAll('.add').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const qtd = btn.nextElementSibling;
+            qtd.textContent = parseInt(qtd.textContent) + 1;
+        });
     });
 
-    minusBtn.addEventListener('click', () => {
-        let val = parseInt(quantidadeSpan.textContent);
-        if(val > 0) quantidadeSpan.textContent = val - 1;
+    document.getElementById('enviar').addEventListener('click', () => {
+        let pedido = '';
+        document.querySelectorAll('.marmita').forEach(m => {
+            const nome = m.querySelector('.nome').innerText;
+            const qtd = m.querySelector('.quantidade').innerText;
+            if (qtd > 0) pedido += `${nome}: ${qtd}%0A`;
+        });
+
+        if (!pedido) {
+            alert('Selecione pelo menos uma marmita!');
+            return;
+        }
+
+        const pagamento = document.getElementById('pagamento').value;
+        const obs = document.getElementById('obs').value;
+
+        const numero = 'SEUNUMEROAQUI';
+        const msg = `Pedido:%0A${pedido}%0APagamento: ${pagamento}%0AObs: ${obs}`;
+
+        window.open(`https://wa.me/${numero}?text=${msg}`, '_blank');
     });
-});
-
-// Enviar pedido via WhatsApp
-document.getElementById('enviar').addEventListener('click', () => {
-    let pedido = '';
-    document.querySelectorAll('.marmita').forEach(m => {
-        const nome = m.querySelector('.nome').textContent;
-        const qtd = parseInt(m.querySelector('.quantidade').textContent);
-        if(qtd > 0) pedido += `${nome}: ${qtd}\n`;
-    });
-
-    if(!pedido) { alert('Selecione pelo menos uma marmita!'); return; }
-
-    const pagamento = document.getElementById('pagamento').value;
-    const observacao = document.getElementById('observacao').value;
-    const tipoRadio = document.querySelector('input[name="tipo"]:checked');
-    const tipo = tipoRadio ? tipoRadio.value : '';
-
-    const numero = '5555991805919'; // substitua pelo WhatsApp real no formato internacional
-    const mensagem = encodeURIComponent(
-        `Pedido:\n${pedido}Pagamento: ${pagamento}\nObservações: ${observacao}\nTipo: ${tipo}`
-    );
-
-    window.open(`https://wa.me/${numero}?text=${mensagem}`, '_blank');
-});
 </script>
 
 </body>
