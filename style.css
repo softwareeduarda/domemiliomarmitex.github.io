@@ -1,65 +1,26 @@
-/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-}
-
-/* FUNDO GERAL */
-body {
-    background: #f3eee9;
-    min-height: 100vh;
-    color: #2b1b12;
-}
-
-/* CABEÇALHO */
-header {
-    background: linear-gradient(135deg, #4b1f0e, #7c3308);
-    padding: 60px 20px;
-    text-align: center;
-    color: #ffffff;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-}
-
-header h1 {
-    font-size: 2.6rem;
-    letter-spacing: 1px;
-}
-
-/* SEÇÕES */
-section {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 35px;
-    background: #ffffff;
-    border-radius: 22px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-}
-
-section h2 {
-    color: #7c3308;
-    margin-bottom: 25px;
-    font-size: 1.8rem;
-    border-left: 6px solid #7c3308;
-    padding-left: 12px;
-}
-
-/* MARMITAS */
+/* Ajuste para as imagens das marmitas ficarem pequenas ao lado do nome */
 .marmita {
-    display: grid;
-    grid-template-columns: 1fr auto auto auto;
+    display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 15px; /* espaço entre imagem e nome */
     padding: 18px;
     margin-bottom: 15px;
     border-radius: 18px;
-    background: #ffffff;
-    border-left: 6px solid #7c3308;
-    box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+    background: linear-gradient(135deg, #ffe7d6, #fff3ea);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* Imagem pequena do lado do nome */
+.foto-marmita {
+    width: 50px; /* tamanho da foto ajustado */
+    height: 50px;
+    object-fit: cover;
+    border-radius: 10px; /* borda arredondada */
+    border: 2px solid #7c3308; /* borda fina marrom */
+}
+
+/* Efeito hover para as marmitas */
 .marmita:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 28px rgba(0,0,0,0.15);
@@ -75,93 +36,25 @@ section h2 {
     color: #7c3308;
 }
 
-.quantidade {
-    font-weight: bold;
-    font-size: 1.1rem;
-}
-
-/* BOTÃO + */
+/* Ajuste no botão */
 .marmita button {
     width: 36px;
     height: 36px;
     border-radius: 50%;
     border: none;
-    background: #7c3308;
-    color: #ffffff;
+    background: linear-gradient(135deg, #a34a12, #7c3308);
+    color: #fff;
     font-size: 20px;
     cursor: pointer;
-    box-shadow: 0 5px 12px rgba(0,0,0,0.25);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.2);
     transition: transform 0.15s ease;
 }
 
 .marmita button:hover {
     transform: scale(1.1);
-    background: #4b1f0e;
 }
 
-/* FORMULÁRIO */
-label {
-    display: block;
-    margin-top: 20px;
-    margin-bottom: 6px;
+.quantidade {
     font-weight: bold;
-}
-
-select,
-textarea {
-    width: 100%;
-    padding: 14px;
-    border-radius: 14px;
-    border: 1px solid #c9b1a1;
-    background: #ffffff;
-    font-size: 1rem;
-}
-
-/* TIPO PEDIDO */
-.tipo-pedido {
-    margin-top: 10px;
-}
-
-.tipo-pedido label {
-    margin-right: 20px;
-    font-weight: normal;
-}
-
-/* BOTÃO ENVIAR */
-#enviar {
-    margin-top: 30px;
-    width: 100%;
-    padding: 16px;
-    border-radius: 18px;
-    border: none;
-    background: #4b1f0e;
-    color: #ffffff;
-    font-size: 1.2rem;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
-    transition: transform 0.2s ease;
-}
-
-#enviar:hover {
-    transform: scale(1.02);
-    background: #7c3308;
-}
-
-/* RODAPÉ */
-footer {
-    text-align: center;
-    padding: 30px;
-    background: linear-gradient(135deg, #4b1f0e, #7c3308);
-    color: #ffffff;
-    margin-top: 60px;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-}
-.foto-marmita {
-    width: 70px;
-    height: 70px;
-    object-fit: cover;
-    border-radius: 12px;
-    border: 2px solid #7c3308;
+    font-size: 1.1rem;
 }
