@@ -3,25 +3,48 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #fdf6f0, #fff8fb);
+    line-height: 1.6;
+    background-color: #fdfdfd;
     color: #333;
 }
 
-/* Cabeçalho */
+/* Cabeçalho com gradiente marrom pastel */
 header {
     text-align: center;
     padding: 60px 20px;
     background: linear-gradient(135deg, #a34a12, #c26128);
     color: white;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 header h1 {
     font-size: 2.8em;
     font-weight: 700;
     text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Navegação */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: #4c2e6f;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: fit-content;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+nav a:hover {
+    background-color: #bd7fe3;
 }
 
 /* Seções */
