@@ -3,33 +3,42 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #fff8f0;
+    background: linear-gradient(to bottom, #fff8f0, #fdf0fc);
     color: #333;
 }
 
 /* Cabeçalho */
 header {
     text-align: center;
-    padding: 50px 20px;
-    background-color: #a34a12; /* marrom */
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #a34a12, #c26128);
     color: white;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    font-size: 2.5em;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
 
 /* Seções Marmitas e Pedido */
 section {
-    padding: 40px 20px;
-    max-width: 800px;
-    margin: 30px auto;
-    background-color: #fdf0fc;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 50px 20px;
+    max-width: 900px;
+    margin: 40px auto;
+    background: linear-gradient(to bottom, #fdf0fc, #ffe6f2);
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
 section h2 {
     color: #a34a12;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 /* Marmitas */
@@ -37,34 +46,45 @@ section h2 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #ffe6d6;
-    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    background: linear-gradient(to right, #ffe6d6, #ffd9c6);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.marmita:hover {
+    transform: translateY(-3px);
 }
 
 .marmita .nome {
-    font-weight: bold;
+    font-weight: 700;
+    font-size: 1.1em;
 }
 
 .marmita .valor {
-    margin: 0 10px;
-}
-
-.marmita button {
-    background-color: #a34a12; /* marrom */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    font-size: 18px;
+    margin: 0 15px;
     font-weight: bold;
 }
 
+.marmita button {
+    background: #a34a12;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
 .marmita button:hover {
-    background-color: #873d0f; /* marrom escuro ao passar o mouse */
+    background: #c26128;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
 
 /* Pedido */
@@ -76,39 +96,45 @@ label {
 
 select, textarea {
     width: 100%;
-    padding: 10px;
-    border-radius: 8px;
+    padding: 12px;
+    border-radius: 12px;
     border: 1px solid #ccc;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 1em;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
 }
 
 .tipo-pedido input {
-    margin-right: 5px;
+    margin-right: 8px;
 }
 
 button#enviar {
-    background-color: #a34a12; /* marrom */
+    background: #a34a12;
     color: white;
     border: none;
-    padding: 12px 20px;
-    border-radius: 10px;
+    padding: 14px 25px;
+    border-radius: 15px;
     cursor: pointer;
-    margin-top: 15px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
+    width: 100%;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
 }
 
 button#enviar:hover {
-    background-color: #873d0f; /* marrom escuro */
+    background: #c26128;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }
 
 /* Rodapé */
 footer {
     text-align: center;
-    padding: 20px;
-    background-color: #a34a12; /* marrom */
+    padding: 25px;
+    background: linear-gradient(135deg, #a34a12, #c26128);
     color: white;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    margin-top: 40px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    margin-top: 50px;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.2);
 }
