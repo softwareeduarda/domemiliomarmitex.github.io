@@ -158,3 +158,10 @@ footer {
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
 }
+.foto-marmita {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid #7c3308;
+}
