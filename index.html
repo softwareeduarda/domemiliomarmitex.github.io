@@ -1,139 +1,88 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Dom Emilío Marmitex e Viandas</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Fonte -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="estilo.css">
+    <title>Dom Emílio Marmitex</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-    <h1>Dom Emilío Marmitex e Viandas</h1>
+    <h1>Dom Emílio Marmitex</h1>
+    <p>Faça seu pedido 🍽️</p>
 </header>
 
 <section>
-    <h2>🍽️ Sabores Disponíveis</h2>
+    <h2>Sabores</h2>
 
-    <!-- Marmita -->
     <div class="marmita">
-        <img src="a-milanesa.jpg" alt="Bife à Milanesa" class="foto-marmita">
+        <img src="a-milanesa.jpg" class="foto-marmita">
         <span class="nome">Bife à Milanesa</span>
         <span class="valor">R$ 18,00</span>
-        <button class="add">+</button>
+        <button>-</button>
         <span class="quantidade">0</span>
+        <button>+</button>
     </div>
 
     <div class="marmita">
-        <img src="bife-acebolado.jpg" alt="Bife Acebolado" class="foto-marmita">
+        <img src="bife-acebolado.jpg" class="foto-marmita">
         <span class="nome">Bife Acebolado</span>
         <span class="valor">R$ 18,00</span>
-        <button class="add">+</button>
+        <button>-</button>
         <span class="quantidade">0</span>
+        <button>+</button>
     </div>
 
     <div class="marmita">
-        <img src="almondega.jpg" alt="Almôndega" class="foto-marmita">
+        <img src="almondega.jpg" class="foto-marmita">
         <span class="nome">Almôndega</span>
         <span class="valor">R$ 13,00</span>
-        <button class="add">+</button>
+        <button>-</button>
         <span class="quantidade">0</span>
+        <button>+</button>
     </div>
 
     <div class="marmita">
-        <img src="file-frango.jpg" alt="Filé de Frango" class="foto-marmita">
+        <img src="file-frango.jpg" class="foto-marmita">
         <span class="nome">Filé de Frango</span>
         <span class="valor">R$ 15,00</span>
-        <button class="add">+</button>
+        <button>-</button>
         <span class="quantidade">0</span>
+        <button>+</button>
     </div>
 
     <div class="marmita">
-        <img src="frango-molho.jpg" alt="Frango ao Molho" class="foto-marmita">
+        <img src="frango-molho.jpg" class="foto-marmita">
         <span class="nome">Frango ao Molho</span>
         <span class="valor">R$ 15,00</span>
-        <button class="add">+</button>
+        <button>-</button>
         <span class="quantidade">0</span>
+        <button>+</button>
     </div>
 
     <div class="marmita">
-        <img src="strogonoff.jpg" alt="Strogonoff" class="foto-marmita">
+        <img src="strogonoff.jpg" class="foto-marmita">
         <span class="nome">Strogonoff</span>
         <span class="valor">R$ 15,00</span>
-        <button class="add">+</button>
+        <button>-</button>
         <span class="quantidade">0</span>
+        <button>+</button>
     </div>
 
     <div class="marmita">
-        <img src="carne-panela.jpg" alt="Carne de Panela" class="foto-marmita">
+        <img src="carne-panela.jpg" class="foto-marmita">
         <span class="nome">Carne de Panela</span>
         <span class="valor">R$ 15,00</span>
-        <button class="add">+</button>
+        <button>-</button>
         <span class="quantidade">0</span>
-    </div>
-</section>
-
-<section>
-    <h2>📝 Informações do Pedido</h2>
-
-    <label>Forma de pagamento</label>
-    <select id="pagamento">
-        <option>Pix</option>
-        <option>Dinheiro</option>
-        <option>Cartão</option>
-    </select>
-
-    <label>Observações</label>
-    <textarea id="obs" rows="3"></textarea>
-
-    <label>Tipo de pedido</label>
-    <div class="tipo-pedido">
-        <label><input type="radio" name="tipo" value="Tele"> Tele</label>
-        <label><input type="radio" name="tipo" value="Retirada"> Retirada</label>
+        <button>+</button>
     </div>
 
-    <button id="enviar">Enviar Pedido pelo WhatsApp</button>
 </section>
 
 <footer>
-    <p>© 2025 Dom Emilío Marmitex e Viandas</p>
+    <p>Pedidos pelo WhatsApp</p>
 </footer>
-
-<script>
-    document.querySelectorAll('.add').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const qtd = btn.nextElementSibling;
-            qtd.textContent = parseInt(qtd.textContent) + 1;
-        });
-    });
-
-    document.getElementById('enviar').addEventListener('click', () => {
-        let pedido = '';
-        document.querySelectorAll('.marmita').forEach(m => {
-            const nome = m.querySelector('.nome').innerText;
-            const qtd = m.querySelector('.quantidade').innerText;
-            if (qtd > 0) pedido += `${nome}: ${qtd}%0A`;
-        });
-
-        if (!pedido) {
-            alert('Selecione pelo menos uma marmita!');
-            return;
-        }
-
-        const pagamento = document.getElementById('pagamento').value;
-        const obs = document.getElementById('obs').value;
-
-        const numero = 'SEUNUMEROAQUI';
-        const msg = `Pedido:%0A${pedido}%0APagamento: ${pagamento}%0AObs: ${obs}`;
-
-        window.open(`https://wa.me/${numero}?text=${msg}`, '_blank');
-    });
-</script>
 
 </body>
 </html>
