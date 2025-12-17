@@ -9,80 +9,107 @@
 
 <header>
     <h1>Dom Emílio Marmitex</h1>
-    <p>Faça seu pedido 🍽️</p>
+    <p>Marmitas caseiras 🍽️</p>
 </header>
 
 <section>
     <h2>Sabores</h2>
 
     <div class="marmita">
-        <img src="a-milanesa.jpg" class="foto-marmita">
+        <img src="a-milanesa.jpg" class="foto">
         <span class="nome">Bife à Milanesa</span>
         <span class="valor">R$ 18,00</span>
-        <button>-</button>
-        <span class="quantidade">0</span>
-        <button>+</button>
+        <button onclick="alterar(this, -1)">−</button>
+        <span class="qtd">0</span>
+        <button onclick="alterar(this, 1)">+</button>
     </div>
 
     <div class="marmita">
-        <img src="bife-acebolado.jpg" class="foto-marmita">
+        <img src="bife-acebolado.jpg" class="foto">
         <span class="nome">Bife Acebolado</span>
         <span class="valor">R$ 18,00</span>
-        <button>-</button>
-        <span class="quantidade">0</span>
-        <button>+</button>
+        <button onclick="alterar(this, -1)">−</button>
+        <span class="qtd">0</span>
+        <button onclick="alterar(this, 1)">+</button>
     </div>
 
     <div class="marmita">
-        <img src="almondega.jpg" class="foto-marmita">
         <span class="nome">Almôndega</span>
         <span class="valor">R$ 13,00</span>
-        <button>-</button>
-        <span class="quantidade">0</span>
-        <button>+</button>
+        <button onclick="alterar(this, -1)">−</button>
+        <span class="qtd">0</span>
+        <button onclick="alterar(this, 1)">+</button>
     </div>
 
     <div class="marmita">
-        <img src="file-frango.jpg" class="foto-marmita">
-        <span class="nome">Filé de Frango</span>
-        <span class="valor">R$ 15,00</span>
-        <button>-</button>
-        <span class="quantidade">0</span>
-        <button>+</button>
-    </div>
-
-    <div class="marmita">
-        <img src="frango-molho.jpg" class="foto-marmita">
-        <span class="nome">Frango ao Molho</span>
-        <span class="valor">R$ 15,00</span>
-        <button>-</button>
-        <span class="quantidade">0</span>
-        <button>+</button>
-    </div>
-
-    <div class="marmita">
-        <img src="strogonoff.jpg" class="foto-marmita">
         <span class="nome">Strogonoff</span>
         <span class="valor">R$ 15,00</span>
-        <button>-</button>
-        <span class="quantidade">0</span>
-        <button>+</button>
+        <button onclick="alterar(this, -1)">−</button>
+        <span class="qtd">0</span>
+        <button onclick="alterar(this, 1)">+</button>
+    </div>
+</section>
+
+<section>
+    <h2>Detalhes do Pedido</h2>
+
+    <label>Horário desejado:</label>
+    <input type="time" id="horario">
+
+    <label>Tipo do pedido:</label>
+    <div class="radio">
+        <label><input type="radio" name="tipo" value="Tele"> Tele (Entrega)</label>
+        <label><input type="radio" name="tipo" value="Retirada"> Retirada</label>
     </div>
 
-    <div class="marmita">
-        <img src="carne-panela.jpg" class="foto-marmita">
-        <span class="nome">Carne de Panela</span>
-        <span class="valor">R$ 15,00</span>
-        <button>-</button>
-        <span class="quantidade">0</span>
-        <button>+</button>
-    </div>
+    <label>Observações:</label>
+    <textarea id="obs" placeholder="Ex: sem cebola, pouco sal..."></textarea>
 
+    <button id="enviar" onclick="enviarPedido()">Enviar pelo WhatsApp</button>
 </section>
 
 <footer>
-    <p>Pedidos pelo WhatsApp</p>
+    © 2025 Dom Emílio Marmitex
 </footer>
+
+<script>
+function alterar(btn, valor) {
+    const qtd = btn.parentElement.querySelector('.qtd');
+    let n = parseInt(qtd.innerText) + valor;
+    if (n < 0) n = 0;
+    qtd.innerText = n;
+}
+
+function enviarPedido() {
+    let texto = "🍽️ *Pedido Dom Emílio*%0A%0A";
+    let temPedido = false;
+
+    document.querySelectorAll('.marmita').forEach(m => {
+        const nome = m.querySelector('.nome').innerText;
+        const qtd = m.querySelector('.qtd').innerText;
+        if (qtd > 0) {
+            texto += `${nome}: ${qtd}%0A`;
+            temPedido = true;
+        }
+    });
+
+    if (!temPedido) {
+        alert("Selecione pelo menos uma marmita");
+        return;
+    }
+
+    const horario = document.getElementById('horario').value;
+    const obs = document.getElementById('obs').value;
+    const tipo = document.querySelector('input[name="tipo"]:checked');
+
+    texto += `%0A🕒 Horário: ${horario || "Não informado"}`;
+    texto += `%0A📦 Tipo: ${tipo ? tipo.value : "Não informado"}`;
+    texto += `%0A📝 Obs: ${obs || "Nenhuma"}`;
+
+    const numero = "55SEUNUMEROAQUI";
+    window.open(`https://wa.me/${numero}?text=${texto}`, "_blank");
+}
+</script>
 
 </body>
 </html>
